@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Isotope Gallery Filtering</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+<script src="js/jquery.isotope.js" type="text/javascript"></script> 
+</head>
+<body>
+
+<h1>Isotope Gallery Filtering</h1>
+ 
+<div class="portfolioFilter">
+   Select a genre: 
+	<a href="#" data-filter="*" class="current">All Genres</a>
+	<a href="#" data-filter=".soul">Soul</a>
+	<a href="#" data-filter=".funk">Funk</a>
+	<a href="#" data-filter=".hiphop">Hip Hop</a>
+	<a href="#" data-filter=".rock">Rock</a>
+
+</div>
+
+<div class="portfolioContainer">
+
+	<div class="block soul">
+		<img src="images/al_green.jpg" alt="image">
+      <div class="block-info">
+         <h4>Al Green</h4>
+         <p>Still In Love With You</p>
+      </div>
+	</div>
+
+   <div class="block hiphop">
+      <img src="images/de_la_soul.jpg" alt="image">
+      <div class="block-info">
+         <h4>De La Soul</h4>
+         <p>De La Soul is Dead</p>
+        </div>
+   </div>
+
+   <div class="block soul">
+      <img src="images/aretha.jpg" alt="image">
+      <div class="block-info">
+         <h4>Aretha Franklin</h4>
+         <p>I Never Loved a Man the Way I Love You</p>
+        </div>
+   </div>
+
+
+
+
+   <div class="block funk feature">
+      <img src="images/sly.jpg" alt="image">
+      <div class="block-info">
+         <h4>Sly &amp; The Family Stone</h4>
+         <p>Fresh</p>
+        </div>
+   </div>
+
+   <div class="block soul">
+      <img src="images/marvin.png" alt="image">
+      <div class="block-info">
+         <h4>Marvin Gaye</h4>
+         <p>What's Going On</p>
+        </div>
+   </div>
+
+
+
+   <div class="block hiphop">
+      <img src="images/rundmc.jpg" alt="image">
+      <div class="block-info">
+         <h4>Run DMC</h4>
+         <p>King of Rock</p>
+        </div>
+   </div>
+
+   <div class="block rock">
+      <img src="images/velvet_underground.jpg" alt="image">
+      <div class="block-info">
+         <h4>Velvet Underground &amp; Nico</h4>
+         <p>Velvet Underground &amp; Nico</p>
+        </div>
+   </div>
+
+
+   <div class="block funk">
+      <img src="images/james_brown.jpg" alt="image">
+      <div class="block-info">
+         <h4>James Brown</h4>
+         <p>Prisoner of Love</p>
+        </div>
+   </div>
+
+
+   <div class="block rock">
+      <img src="images/pink_floyd.jpg" alt="image">
+      <div class="block-info">
+         <h4>Pink Floyd</h4>
+         <p>Dark Side of the Moon</p>
+        </div>
+   </div>
+
+   <div class="block rock">
+      <img src="images/led_zeppelin.jpg" alt="image">
+      <div class="block-info">
+         <h4>Led Zeppelin</h4>
+         <p>Houses of the Holy</p>
+        </div>
+   </div>
+
+
+   <div class="block funk">
+      <img src="images/funkadelic.jpg" alt="image">
+      <div class="block-info">
+         <h4>Funkadelic</h4>
+         <p>Funkadelic</p>
+        </div>
+   </div>
+
+
+   <div class="block hiphop">
+      <img src="images/tribe.jpg" alt="image">
+      <div class="block-info">
+         <h4>Tribe Called Quest</h4>
+         <p>Midnight Maurauders</p>
+        </div>
+   </div>
+	
+
+	
+</div>
+ 
+<script type="text/javascript">
+
+$(window).load(function(){
+    var $container = $('.portfolioContainer');
+    $container.isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+    });
+ 
+    $('.portfolioFilter a').click(function(){
+        $('.portfolioFilter .current').removeClass('current');
+        $(this).addClass('current');
+ 
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+         });
+         return false;
+    }); 
+});
+
+</script>
+ 
+</body>
+</html>
